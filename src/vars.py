@@ -1,7 +1,7 @@
 import logging, colorlog, os
 
-ZABBIX_API_URL = os.environ['ZABBIX_API_URL']
 ZABBIX_SERVER_URL = os.environ['ZABBIX_SERVER_URL']
+ZABBIX_API_URL = "https://" + ZABBIX_SERVER_URL + "/zabbix/api_jsonrpc.php"
 BEAM_URL = os.environ['BEAM_URL']
 PROXY_ID = os.environ['PROXY_ID']
 KEY = os.environ['KEY']
@@ -13,9 +13,8 @@ beam_headers = {
     }  
     
 zabbix_api_headers = {
-            'Content-Type': 'application/json',
+            'content-type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Basic QWRtaW46emFiYml4'
     }
 #set up logger
 

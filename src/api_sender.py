@@ -14,9 +14,9 @@ def apiSender(json_body):
       return "failed", error_msg
       
     if api_resp.status_code == 200:
-        logging.info("Send data to Zabbix via API - " + str(api_resp.status_code) + " " + responses[api_resp.status_code])
+        logging.info(f"Send data to Zabbix via API - {api_resp.status_code} {responses[api_resp.status_code]}")
         #print(time.ctime() + " | send data to zabbix (API) - " + str(api_resp.status_code) " " + responses[api_resp.status_code])
         return "succeeded", str(api_resp.text)
     else:
-        logging.error("Send data to Zabbix via API failed - " + str(api_resp.status_code) + " " + responses[api_resp.status_code])
-        return "failed", (str(api_resp.status_code) + " " + responses[api_resp.status_code])
+        logging.error(f"Send data to Zabbix via API failed - {api_resp.status_code} {responses[api_resp.status_code]}")
+        return "failed", f"Send data to Zabbix via API failed - {api_resp.status_code} {responses[api_resp.status_code]}"

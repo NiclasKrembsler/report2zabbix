@@ -4,7 +4,6 @@ services:
     image: "report2zabbix"
     container_name: monitoring
     environment: 
-      HOST: ${HOST}
       BEAM_URL: "http://192.168.0.199:8082"
       PROXY_ID: "zabbix.niclas-dev.broker.dev.ccp-it.dktk.dkfz.de"
       ZABBIX_API_URL: "http://192.168.0.60/zabbix/api_jsonrpc.php"
